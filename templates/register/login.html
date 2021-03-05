@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Log IN</h1>
+<form action="{% url 'blog:login' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="usr"> Username </label>
+    <input type="text" id = 'usr' name = 'username'>
+    
+    <label for="pwd"> Password </label>
+    <input type="password" id = 'pwd' name = 'password'>
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
